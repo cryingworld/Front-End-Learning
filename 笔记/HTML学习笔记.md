@@ -116,7 +116,7 @@ html中的属性是为元素提供附加信息。属性以名称/值对的形式
 
 <font color="red">注意：浏览器会自动地在标题的前后添加空行</font>
 
-### html水平线
+### HTML水平线
 
 <h r />标签用于在html页面中创建水平线
 
@@ -132,7 +132,7 @@ html中的属性是为元素提供附加信息。属性以名称/值对的形式
 <p>This is a paragraph</p>
 ```
 
-### html注释
+### HTML注释
 
 注释的作用是提高代码可读性，可以更容易被人所理解，浏览器不会显示注释内容
 
@@ -464,4 +464,499 @@ var person = {
 
 <p><var>E = m c<sup>2</sup></var></p>
 ```
+
+## HTML链接
+
+HTML链接使用标签< a >来设置超文本链接，并在标签中使用href属性来描述链接的地址。
+
+HTML链接语法
+
+```
+<a href="url">链接文本</a>
+```
+
+### target属性
+
+使用target，可以定义被链接的文档显示在何处。
+
+例：
+
+```
+<a href="https://www.runoob.com/" target="_blank" rel="noopener noreferrer">访问菜鸟教程!</a>
+```
+
+会在新窗口打开文档
+
+“_top”则会在该窗口打开文档
+
+### id属性
+
+id属性可用于创建一个HTML文档书签，该书签不会在HTML页面中显示。
+
+例：
+
+```
+<a id="tips">有用的提示部分</a>
+<a href="#tips">访问有用的提示部分</a>
+<a href="https://www.runoob.com/html/html-links.html#tips">
+访问有用的提示部分</a>
+```
+
+## HTML头部
+
+### < head >元素
+
+< head > 元素包含了所有的头部标签元素。在 < head >元素中你可以插入脚本（scripts）, 样式文件（CSS），及各种meta信息。
+
+可以添加在头部区域的元素标签为: < title >, < style >, < meta >, < link >, < script >, < noscript > 和 < base >。
+
+### < title >元素
+
+该标签定义了不同文档的标题
+
+- 定义了浏览器工具栏的标题
+- 当网页添加到收藏夹时，显示在收藏夹中的标题
+- 显示在搜索引擎结果页面的标题
+
+### < base >元素
+
+描述了基本的链接地址/链接目标，作为HTML文档中所有的链接标签的默认链接。所有的< a >链接都是以其为基础。
+
+### < link >元素
+
+定义了文档与外部资源之间的关系，通常用于链接到样式表。
+
+例：
+
+```
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+```
+
+### < style >元素
+
+定义了HTML文档的样式文件引用地址，也可直接添加样式来渲染HTML文档。
+
+```
+<head>
+<style type="text/css">
+body {background-color:yellow}
+p {color:blue}
+</style>
+</head>
+```
+
+### < meta >元素
+
+meta标签描述了一些基本的元数据。
+
+< meta > 标签提供了元数据.元数据也不显示在页面上，但会被浏览器解析。
+
+META 元素通常用于指定网页的描述，关键词，文件的最后修改时间，作者，和其他元数据。
+
+元数据可以使用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他Web服务。
+
+< meta > 一般放置于 < head > 区域
+
+例：
+
+```
+为搜索引擎定义关键词
+<meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
+为网页定义描述内容
+<meta name="description" content="免费 Web & 编程 教程">
+定义网页作者
+<meta name="author" content="Runoob">
+每30秒刷新当前页面
+<meta http-equiv="refresh" content="30">
+```
+
+### < script >元素
+
+用于加载脚本文件，例javaScript
+
+## HTML CSS
+
+用于渲染HTML元素标签的样式
+
+CSS可以通过一下方式添加到HTML中
+
+- 内联样式：使用style属性
+- 内部样式表：在HTML文档头部< head >区域使用style元素包含css
+- 外部引用：使用外部css文件
+
+最好的方式是通过外部引用css文件
+
+### 内联样式
+
+当特殊的样式需要应用到个别元素时，使用内联样式，在相关的标签种使用样式属性，可包含任何css属性。
+
+例：
+
+```
+<p style="color:blue;margin-left:20px;">这是一个段落。</p>
+```
+
+使用（background－color）定义一个元素的背景颜色
+
+例：
+
+```
+<body style="background-color:yellow;">
+<h2 style="background-color:red;">这是一个标题</h2>
+<p style="background-color:green;">这是一个段落。</p>
+</body>
+```
+
+字体，字体颜色，字体大小
+
+使用font-family color font-size来定义字体样式，颜色和大小。
+
+例：
+
+```
+<h1 style="font-family:verdana;">一个标题</h1>
+<p style="font-family:arial;color:red;font-size:20px;">一个段落。</p>
+```
+
+文本对齐方式
+
+使用text-align(文字对齐)属性来指定文本的水平与垂直对齐方式
+
+例：
+
+```
+<h1 style="text-align:center;">居中对齐的标题</h1>
+<p>这是一个段落。</p>
+```
+
+### 内部样式表
+
+当单个文件需要特别样式时，就可以使用内部样式表。你可以在<head> 部分通过 < style >标签定义内部样式表
+
+例：
+
+```
+<head>
+<style type="text/css">
+body {background-color:yellow;}
+p {color:blue;}
+</style>
+</head>
+```
+
+### 外部样式表
+
+当样式需要被应用到很多页面的时候，外部样式表将是理想的选择，使用外部样式表，可以通过更改一个文件来改变整个站点的外观。
+
+例：
+
+```
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+```
+
+## HTML图像
+
+图像由< img >标签定义，只包含属性，没有闭合标签。
+
+要显示图像，需要使用src属性，其实指向图像的URL地址。
+
+定义图像语法：
+
+```
+<img src="url" alt="some_text">
+```
+
+图像显示在图像标签出现的地方。
+
+### alt属性
+
+alt属性用来为图像定义一串预备的可替换的文本，替换文本属性的值由用户定义。
+
+```
+<img src="boat.gif" alt="Big Boat">
+```
+
+当浏览器无法载入图像时，替换文本属性告诉读者失去的信息，浏览器会显示替换性的文字，有助于更好的显示信息。
+
+### 高度与宽度
+
+使用width 和 height来定义图像的高度和宽度。
+
+## HTML表格
+
+表格由< table >标签定义，每个表格有若干行< tr > 每行的单元格由< td >定义。
+
+数据单元格可以包含文本，图片，列表，段落，表单，水平线，表格等。
+
+例：
+
+```
+<table border="1">
+    <tr>
+        <td>row 1, cell 1</td>
+        <td>row 1, cell 2</td>
+    </tr>
+    <tr>
+        <td>row 2, cell 1</td>
+        <td>row 2, cell 2</td>
+    </tr>
+</table>
+```
+
+### HTML表格表头
+
+表格的表头使用< th >标签定义。
+
+例：
+
+```
+<table border="1">
+    <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+    </tr>
+    <tr>
+        <td>row 1, cell 1</td>
+        <td>row 1, cell 2</td>
+    </tr>
+    <tr>
+        <td>row 2, cell 1</td>
+        <td>row 2, cell 2</td>
+    </tr>
+</table>
+```
+
+## HTML列表
+
+### 无序列表
+
+用< ul >标签定义，每个列表项由< li >标签定义
+
+例：
+
+```
+<ul>
+<li>Coffee</li>
+<li>Milk</li>
+</ul>
+```
+
+### 有序列表
+
+用< ol >标签定义
+
+例：
+
+```
+<ol>
+<li>Coffee</li>
+<li>Milk</li>
+</ol>
+```
+
+### 自定义列表
+
+自定义列表是项目和注释的组合
+
+以< dl >标签开始，表项以< dt >标签开始，自定义表项以< dd >标签开始
+
+例：
+
+```
+<dl>
+<dt>Coffee</dt>
+<dd>- black hot drink</dd>
+<dt>Milk</dt>
+<dd>- white cold drink</dd>
+</dl>
+```
+
+## HTML区块
+
+HTML通过< div > 和 < span >将元素组合起来
+
+内联元素在显示时通常不会以新行开始。
+
+### < div > 
+
+HTML < div > 元素是块级元素，它可用于组合其他 HTML 元素的容器。
+
+<div> 元素没有特定的含义。除此之外，由于它属于块级元素，浏览器会在其前后显示折行。
+
+如果与 CSS 一同使用，< div > 元素可用于对大的内容块设置样式属性。
+
+< div > 元素的另一个常见的用途是文档布局。它取代了使用表格定义布局的老式方法。使用 < table > 元素进行文档布局不是表格的正确用法。< table > 元素的作用是显示表格化的数据。
+
+### < span >
+
+HTML < span > 元素是内联元素，可用作文本的容器
+
+< span > 元素也没有特定的含义。
+
+当与 CSS 一同使用时，< span > 元素可用于为部分文本设置样式属性。
+
+## HTML布局
+
+使用< div >创建多例布局
+
+例：
+
+```
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+</head>
+<body>
+ 
+<div id="container" style="width:500px">
+ 
+<div id="header" style="background-color:#FFA500;">
+<h1 style="margin-bottom:0;">主要的网页标题</h1></div>
+ 
+<div id="menu" style="background-color:#FFD700;height:200px;width:100px;float:left;">
+<b>菜单</b><br>
+HTML<br>
+CSS<br>
+JavaScript</div>
+ 
+<div id="content" style="background-color:#EEEEEE;height:200px;width:400px;float:left;">
+内容在这里</div>
+ 
+<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+版权 © runoob.com</div>
+ 
+</div>
+ 
+</body>
+</html>
+```
+
+![Snipaste_2021-09-04_11-20-48](../imag/Snipaste_2021-09-04_11-20-48.png)
+
+或使用表格进行布局
+
+例：
+
+```
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+</head>
+<body>
+ 
+<table width="500" border="0">
+<tr>
+<td colspan="2" style="background-color:#FFA500;">
+<h1>主要的网页标题</h1>
+</td>
+</tr>
+ 
+<tr>
+<td style="background-color:#FFD700;width:100px;">
+<b>菜单</b><br>
+HTML<br>
+CSS<br>
+JavaScript
+</td>
+<td style="background-color:#eeeeee;height:200px;width:400px;">
+内容在这里</td>
+</tr>
+ 
+<tr>
+<td colspan="2" style="background-color:#FFA500;text-align:center;">
+版权 © runoob.com</td>
+</tr>
+</table>
+ 
+</body>
+</html>
+```
+
+结果与上图一致。
+
+## HTML表单
+
+表单是一个包含表单元素的区域，允许用户在表单中输入内容。例如：文本域，下拉表单，单选框，复选框等等。
+
+表单使用< form >标签设置。
+
+多数情况下用到的表单标签是输入标签，输入类型使用type来定义。
+
+### 文本域
+
+通过< input type="text" >标签来设定，当需要输入数字等信息时会使用文本域。
+
+例：
+
+```
+<form>
+First name: <input type="text" name="firstname"><br>
+Last name: <input type="text" name="lastname">
+</form>
+```
+
+![Snipaste_2021-09-04_11-30-27](../imag/Snipaste_2021-09-04_11-30-27.png)
+
+### 密码字段
+
+使用< input type="password" >标签定义，字段字符会议星号或者圆点代替。
+
+### 单选按钮（Radio Buttons）
+
+< input type="radio" >标签定义单选框选项。
+
+例：
+
+```
+<form>
+<input type="radio" name="sex" value="male">Male<br>
+<input type="radio" name="sex" value="female">Female
+</form>
+```
+
+![Snipaste_2021-09-04_11-36-12](../imag/Snipaste_2021-09-04_11-36-12.png)
+
+### 复选框（checkboxs）
+
+< input type="checkboxs" >标签定义复选框，用户从若干给定的选择中选取一个或若干个选项。
+
+例：
+
+```
+<form>
+<input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+<input type="checkbox" name="vehicle" value="Car">I have a car
+</form>
+```
+
+
+
+![Snipaste_2021-09-04_11-41-37](../imag/Snipaste_2021-09-04_11-41-37.png)
+
+### 提交按钮
+
+< input type="submit" >标签定义了提交按钮
+
+当用户单击确认按钮时，表单的内容会被传送到另一个文件。表单的动作属性定义了目的文件的文件名。由动作属性定义的这个文件通常会对接收到的输入数据进行相关的处理。
+
+例：
+
+```
+<form name="input" action="html_form_action.php" method="get">
+Username: <input type="text" name="user">
+<input type="submit" value="Submit">
+</form>
+```
+
+![Snipaste_2021-09-04_11-46-49](../imag/Snipaste_2021-09-04_11-46-49.png)
+
+假如您在上面的文本框内键入几个字母，然后点击确认按钮，那么输入数据会传送到 "html_form_action.php" 的页面。该页面将显示出输入的结果。
 
