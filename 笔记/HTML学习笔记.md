@@ -960,3 +960,301 @@ Username: <input type="text" name="user">
 
 假如您在上面的文本框内键入几个字母，然后点击确认按钮，那么输入数据会传送到 "html_form_action.php" 的页面。该页面将显示出输入的结果。
 
+## HTML框架
+
+使用框架可以在同一个浏览器窗口显示不止一个页面
+
+iframe语法
+
+```
+<iframe src="URL"></iframe>
+```
+
+该url指向不同的网页
+
+设置高度与宽度，属性默认以像素为单位，也可按比例显示（80%）
+
+```
+<iframe loading="lazy" src="demo_iframe.htm" width="200" height="200"></iframe>
+```
+
+移除边框
+
+```
+<iframe src="demo_iframe.htm" frameborder="0"></iframe>
+```
+
+使用iframe显示目标链接页面
+
+```
+<iframe src="demo_iframe.htm" name="iframe_a"></iframe>
+<p><a href="http://www.runoob.com" target="iframe_a" rel="noopener">RUNOOB.COM</a></p>
+```
+
+## HTML颜色
+
+HTML 颜色由一个十六进制符号来定义，这个符号由红色、绿色和蓝色的值组成（RGB）。
+
+每种颜色的最小值是0（十六进制：#00）。最大值是255（十六进制：#FF）。
+
+![Snipaste_2021-09-10_08-56-44](../imag/Snipaste_2021-09-10_08-56-44.png)
+
+## HTML脚本
+
+### < script >标签
+
+< script > 标签用于定义客户端脚本，比如 JavaScript。
+
+< script > 元素既可包含脚本语句，也可通过 src 属性指向外部脚本文件。
+
+
+JavaScript 最常用于图片操作、表单验证以及内容动态更新。
+
+下面的脚本会向浏览器输出"Hello World!"：
+
+```
+<script>
+document.write("Hello World!");
+</script>
+```
+
+浏览器会输出hello world
+
+### < noscript >标签
+
+< noscript > 标签提供无法使用脚本时的替代内容，比方在浏览器禁用脚本时，或浏览器不支持客户端脚本时。
+
+< noscript >元素可包含普通 HTML 页面的 body 元素中能够找到的所有元素。
+
+只有在浏览器不支持脚本或者禁用脚本时，才会显示 < noscript > 元素中的内容：
+
+## HTML 字符实体
+
+HTML 中的预留字符必须被替换为字符实体。
+
+一些在键盘上找不到的字符也可以使用字符实体来替换。
+
+在 HTML 中，某些字符是预留的。
+
+在 HTML 中不能使用小于号（<）和大于号（>），这是因为浏览器会误认为它们是标签。
+
+如果希望正确地显示预留字符，我们必须在 HTML 源代码中使用字符实体（character entities）。 字符实体类似这样：
+
+```
+&entity_name;
+或
+
+&#entity_number;
+```
+
+如需显示小于号，我们必须这样写：**<** 或 **<** 或 **<**
+
+**提示：** 使用实体名而不是数字的好处是，名称易于记忆。不过坏处是，浏览器也许并不支持所有实体名称（对实体数字的支持却很好）。
+
+### 不间断空格
+
+HTML 中的常用字符实体是不间断空格(&nbsp;)。
+
+浏览器总是会截短 HTML 页面中的空格。如果您在文本中写 10 个空格，在显示该页面之前，浏览器会删除它们中的 9 个。如需在页面中增加空格的数量，您需要使用 &nbsp; 字符实体。
+
+### 结合音标符
+
+![Snipaste_2021-09-10_09-24-10](../imag/Snipaste_2021-09-10_09-24-10.png)
+
+### HTML字符实体
+
+![Snipaste_2021-09-10_09-24-56](../imag/Snipaste_2021-09-10_09-24-56.png)
+
+## HTML URL
+
+URL(Uniform Resource Locators 统一资源定位器）
+
+URL是一个网页地址
+
+Web浏览器通过URL从Web服务器请求页面。
+
+当您点击 HTML 页面中的某个链接时，对应的 <a> 标签指向万维网上的一个地址。
+
+一个统一资源定位器(URL) 用于定位万维网上的文档。
+
+一个网页地址实例: http://www.runoob.com/html/html-tutorial.html 语法规则:
+
+```
+scheme://host.domain:port/path/filename
+```
+
+- scheme - 定义因特网服务的类型。最常见的类型是 http
+- host - 定义域主机（http 的默认主机是 www）
+- domain - 定义因特网域名，比如 runoob.com
+- :port - 定义主机上的端口号（http 的默认端口号是 80）
+- path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）。
+- filename - 定义文档/资源的名称
+
+### URL字符编码
+
+URL编码使用“%”跟随两位的十六进制数来替换非ASCII字符
+
+URL不能包含空格，通常使用+来替换空格
+
+## HTML 速查
+
+### 基本文档
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>文档标题</title>
+</head>
+<body>
+可见文本...
+</body>
+</html>
+```
+
+### 基本标签
+
+```
+<h1>最大的标题</h1>
+<h2> . . . </h2>
+<h3> . . . </h3>
+<h4> . . . </h4>
+<h5> . . . </h5>
+<h6>最小的标题</h6>
+ 
+<p>这是一个段落。</p>
+<br> （换行）
+<hr> （水平线）
+<!-- 这是注释 -->
+```
+
+### 文本格式化
+
+```
+<b>粗体文本</b>
+<code>计算机代码</code>
+<em>强调文本</em>
+<i>斜体文本</i>
+<kbd>键盘输入</kbd> 
+<pre>预格式化文本</pre>
+<small>更小的文本</small>
+<strong>重要的文本</strong>
+ 
+<abbr> （缩写）
+<address> （联系信息）
+<bdo> （文字方向）
+<blockquote> （从另一个源引用的部分）
+<cite> （工作的名称）
+<del> （删除的文本）
+<ins> （插入的文本）
+<sub> （下标文本）
+<sup> （上标文本）
+```
+
+### 链接
+
+```
+普通的链接：<a href="http://www.example.com/">链接文本</a>
+图像链接： <a href="http://www.example.com/"><img src="URL" alt="替换文本"></a>
+邮件链接： <a href="mailto:webmaster@example.com">发送e-mail</a>
+书签：
+<a id="tips">提示部分</a>
+<a href="#tips">跳到提示部分</a>
+```
+
+### 图片
+
+```
+<img loading="lazy" src="URL" alt="替换文本" height="42" width="42">
+```
+
+### 样式/板块
+
+```
+<style type="text/css">
+h1 {color:red;}
+p {color:blue;}
+</style>
+<div>文档中的块级元素</div>
+<span>文档中的内联元素</span>
+```
+
+### 无序列表
+
+```
+<ul>
+    <li>项目</li>
+    <li>项目</li>
+</ul>
+```
+
+### 有序列表
+
+```
+<ol>
+    <li>第一项</li>
+    <li>第二项</li>
+</ol>
+```
+
+### 定义列表
+
+```
+<dl>
+  <dt>项目 1</dt>
+    <dd>描述项目 1</dd>
+  <dt>项目 2</dt>
+    <dd>描述项目 2</dd>
+</dl>
+```
+
+### 表格
+
+```
+<table border="1">
+  <tr>
+    <th>表格标题</th>
+    <th>表格标题</th>
+  </tr>
+  <tr>
+    <td>表格数据</td>
+    <td>表格数据</td>
+  </tr>
+</table>
+```
+
+### 框架
+
+```
+<iframe src="demo_iframe.htm"></iframe>
+```
+
+### 表单
+
+```
+<form action="demo_form.php" method="post/get">
+<input type="text" name="email" size="40" maxlength="50">
+<input type="password">
+<input type="checkbox" checked="checked">
+<input type="radio" checked="checked">
+<input type="submit" value="Send">
+<input type="reset">
+<input type="hidden">
+<select>
+<option>苹果</option>
+<option selected="selected">香蕉</option>
+<option>樱桃</option>
+</select>
+<textarea name="comment" rows="60" cols="20"></textarea>
+ 
+</form>
+```
+
+### 实体
+
+```
+&lt; 等同于 <
+&gt; 等同于 >
+&#169; 等同于 ©
+```
+
